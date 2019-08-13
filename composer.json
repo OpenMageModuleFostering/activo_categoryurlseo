@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/activo_categoryurlseo",
+    "type": "magento-module",
+    "license": "OSL-3.0",
+    "homepage": "",
+    "description": "Flattens the SEO structure of your entire catalog.",
+    "authors": [
+    {
+        "name": "Activo Extensions",
+        "email": "extensions@activo.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
