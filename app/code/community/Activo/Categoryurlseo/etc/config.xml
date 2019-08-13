@@ -1,8 +1,22 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Activo Extensions
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Activo Commercial License
+ * that is available through the world-wide-web at this URL:
+ * http://extensions.activo.com/license_professional
+ *
+ * @copyright   Copyright (c) 2014 Activo Extensions (http://extensions.activo.com)
+ * @license     OSL 3.0
+ */
+-->
 <config>
     <modules>
         <Activo_Categoryurlseo>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
         </Activo_Categoryurlseo>
     </modules>
     
@@ -11,11 +25,6 @@
             <categoryurlseo>
                 <class>Activo_Categoryurlseo_Helper</class>
             </categoryurlseo>
-            <catalog>
-                <rewrite>
-                    <category>Activo_Categoryurlseo_Helper_Category</category>
-                </rewrite>
-            </catalog>
         </helpers>
         <models>
             <categoryurlseo>
@@ -29,6 +38,17 @@
         </models>
     </global>
     <adminhtml>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <activo_news_categoryurlseo>
+                        <type>singleton</type>
+                        <class>categoryurlseo/feed</class>
+                        <method>observe</method>
+                    </activo_news_categoryurlseo>
+                </observers>
+            </controller_action_predispatch>
+        </events>
          <acl>
             <resources>
                 <admin>
@@ -53,7 +73,6 @@
         <activo_categoryurlseo>
             <global>
                 <enabled>1</enabled>
-                <toplevel></toplevel>
             </global>
         </activo_categoryurlseo>
     </default>
